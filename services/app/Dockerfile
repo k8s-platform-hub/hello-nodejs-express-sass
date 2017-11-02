@@ -1,13 +1,6 @@
-FROM java:8 
+FROM php:7.1.2-apache
 
-# Install maven
-RUN apt-get update
-RUN apt-get install -y maven
-
-WORKDIR /spark
-Add . /spark
-
-RUN mvn package
-#Replace target/java-spark-jar-with-dependencies.jar with the name and description specified by the maven-assembly-plugin in your pom.xml
-CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/java-spark-jar-with-dependencies.jar"]
-
+# Add default apache listener
+COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
+COPY app/conf/ports.conf /etc/apache2/ports.conf
+COPY app/src /var/www/html/

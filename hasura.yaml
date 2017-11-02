@@ -1,4 +1,4 @@
-description: A basic sample project for C# Asp.Net
+description: A basic PHP Apache project using Hasura
 keywords: base, getting-started, csharp, asp, .net, asp.net
-name: hello-csharp-aspnet
+name: hello-php-apache
 platformVersion: v0.15.3

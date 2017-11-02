@@ -1,4 +1,4 @@
-image: "java:<tag>"
+image: "php-apache:0.1"
 port: 8080
 volume_mounts: null
-env_variables: ["PORT"]
+env_variables: []
