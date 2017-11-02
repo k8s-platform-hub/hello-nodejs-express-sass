@@ -1,12 +1,13 @@
-FROM ingensi/oracle-jdk
+FROM java:8 
 
-RUN yum install -y yum-plugin-ovl && yum install -y unzip
-RUN curl -O http://downloads.typesafe.com/typesafe-activator/1.3.12/typesafe-activator-1.3.12.zip 
-RUN unzip typesafe-activator-1.3.12.zip -d / && rm typesafe-activator-1.3.12.zip && chmod a+x /activator-dist-1.3.12/bin/activator
-ENV PATH $PATH:/activator-dist-1.3.12/bin
+# Install maven
+RUN apt-get update
+RUN apt-get install -y maven
 
-WORKDIR /app
-ADD . /app
+WORKDIR /spark
+Add . /spark
 
-CMD ["activator", "run"]
+RUN mvn package
+#Replace target/java-spark-jar-with-dependencies.jar with the name and description specified by the maven-assembly-plugin in your pom.xml
+CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/java-spark-jar-with-dependencies.jar"]
 
