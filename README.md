@@ -1,8 +1,8 @@
-# hello-php-apache
+# hello-nodejs-express-sass
 
-This project consists of a basic hasura project with a simple PHP-Apache app running on it. Once this app is deployed on a Hasura cluster, you will have the app running at [https://app.cluster-name.hasura-app.io](https://app.cluster-name.hasura-app.io).
+This project consists of a basic hasura project with a simple Nodejs-Express app with Sass running on it. Once this app is deployed on a Hasura cluster, you will have the app running at [https://app.cluster-name.hasura-app.io](https://app.cluster-name.hasura-app.io).
 
-This is the right place to start if you are planning to build or want to learn to build an PHP-Apache  app with hasura.
+This is the right place to start if you are planning to build or want to learn to build a NodeJS app with hasura.
 
 ## Sections
 
@@ -29,14 +29,14 @@ Follow this section to get this project working. Before you begin, ensure you ha
 ### Step 1: Getting the project
 
 ```sh
-$ hasura quickstart hello-php-apache
-$ cd hello-php-apache
+$ hasura quickstart hello-nodejs-express-sass
+$ cd hello-nodejs-express-sass
 ```
 
 The above command does the following:
-1. Creates a new folder in the current working directory called `hello-php-apache`
+1. Creates a new folder in the current working directory called `hello-nodejs-express-sass`
 2. Creates a new free hasura cluster for you and sets that cluster as the default cluster for this project
-3. Initializes `hello-php-apache` as a git repository and adds the necessary git remotes.
+3. Initializes `hello-nodejs-express-sass` as a git repository and adds the necessary git remotes.
 
 ### Step 2: Getting cluster information
 
@@ -146,13 +146,13 @@ You can try out these in the `API EXPLORER` tab of the `api console`. To learn m
 
 There might be cases where you might want to perform some custom business logic on your apis. For example, sending an email/sms to a user on sign up or sending a push notification to the mobile device when some event happens. For this, you would want to create your own custom service which does these for you on the endpoints that you define.
 
-This quickstart comes with one such custom service written in PHP using the Apache framework. Check it out in action at `https://app.cluster-name.hasura-app.io` . Currently, it just returns a JSON response of "Hello World" at that endpoint.
+This quickstart comes with one such custom service written made using NodeJS-Express with Sass. Check it out in action at `https://app.cluster-name.hasura-app.io` . Currently, it just returns a JSON response of "Hello World" at that endpoint.
 
 In case you want to use another language/framework for your custom service. Take a look at our docs to see how you can add a new custom service.
 
 ## Migrate from an existing project
 
-If you have an existing PHP-Apache app and would like to migrate it to Hasura:
+If you have an existing NodeJS-Express-Sass app and would like to migrate it to Hasura:
 
 - Replace the `services/app/app` directory with your app directory.
 - Ensure that the structure of the directory is coherent with the current structure.

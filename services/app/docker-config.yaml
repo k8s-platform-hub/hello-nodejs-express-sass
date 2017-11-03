@@ -1,4 +1,4 @@
-image: "php-apache:0.1"
+image: "nodejs-express-sass:<tag>"
 port: 8080
 volume_mounts: null
 env_variables: []

@@ -1,6 +1,8 @@
-FROM php:7.1.2-apache
+FROM mhart/alpine-node:7.6.0
+WORKDIR /src
+# Add app source files
+ADD app/src /src
+#install node modules
+RUN npm install --only=production
 
-# Add default apache listener
-COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
-COPY app/conf/ports.conf /etc/apache2/ports.conf
-COPY app/src /var/www/html/
+CMD ["node", "server.js"]
